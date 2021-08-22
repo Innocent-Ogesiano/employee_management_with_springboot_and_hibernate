@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+      <h1>Employee Management System</h1>
+      <hr>
+      <h2>Save Employee</h2>
+
+      <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+        <input type="text" th:field="*{firstName}" placeholder="Employee First Name" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{lastName}" placeholder="Employee Last Name" class="form-control mb-4 col-4">
+
+        <input type="email" th:field="*{email}" placeholder="Employee Email" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{username}" placeholder="Username" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{userRole}" placeholder="User Role" class="form-control mb-4 col-4">
+
+          <input type="number" th:field="*{salary}" placeholder="Salary" class="form-control mb-4 col-4">
+
+        <input type="password" th:field="*{password}" placeholder="Password" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Save Employee</button>
+      </form>
+
+      <hr>
+
+      <a th:href="@{/adminDashboard}" class="btn btn-primary btn-sm mb-3"> Back to Employee List</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container my-2">
+    <h1>Employee Profile</h1>
+    <div style="display: flex; flex-direction: row; justify-content: space-between; grid-template-rows: auto;">
+        <div>
+            <a th:href="@{/leaveRequest}" class="btn btn-primary btn-sm mb-3"> Request Leave </a>
+            <a th:href="@{/viewEmployeeLeaveRequest}" class="btn btn-primary btn-sm mb-3">View Leave Request History</a>
+            <a th:href="@{/viewSalaryHistory}" class="btn btn-primary btn-sm mb-3">View Salary History</a>
+            <a th:href="@{/logout}" class="btn btn-primary btn-sm mb-3"> Log out </a>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Attendance register</h5>
+                <span th:if="${marked}" th:text="${marked}"></span>
+                <a th:href="@{/saveAttendance}" class="btn btn-primary">
+                    <div class="form-check">
+<!--                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">-->
+<!--                        <label class="form-check-label" for="flexCheckChecked">-->
+                            Mark your Attendance.
+<!--                        </label>-->
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <table border="1" class = "table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Employee First Name</th>
+            <th>Employee Last Name</th>
+            <th>Employee Email</th>
+            <th>Employee Username</th>
+            <th>Employee Role</th>
+<!--            <th>Employee Salary</th>-->
+<!--            <th>Employee Password</th>-->
+<!--            <th colspan="2" style="text-align: center; font-size: xxx-large">Action</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employee}">
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.email}"></td>
+            <td th:text="${employee.username}"></td>
+            <td th:text="${employee.userRole}"></td>
+<!--            <td th:text="${employee.salary}"></td>-->
+<!--            <td th:text="${employee.password}"></td>-->
+<!--            <td> <a th:href="@{/showFormForUpdate/{id}(id=${employee.employeeId})}" class="btn btn-primary">Update</a></td>-->
+<!--            <td><a th:href="@{/deleteEmployee/{id}(id=${employee.employeeId})}" class="btn btn-danger">Delete</a></td>-->
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!--    <header class="page-header">-->
+<!--        <nav>-->
+<!--            <a href="#0" aria-label="forecastr logo" class="logo">-->
+<!--                <svg width="140" height="49">-->
+<!--                    <use xlink:href="#logo"></use>-->
+<!--                </svg>-->
+<!--            </a>-->
+<!--            <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">-->
+<!--                <svg width="20" height="20" aria-hidden="true">-->
+<!--                    <use xlink:href="#down"></use>-->
+<!--                </svg>-->
+<!--            </button>-->
+<!--            <ul class="admin-menu">-->
+<!--                <li class="menu-heading">-->
+<!--                    <h3>Admin</h3>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a href="#0">-->
+<!--                        <svg>-->
+<!--                            <use xlink:href="#pages"></use>-->
+<!--                        </svg>-->
+<!--                        <span>Pages</span>-->
+<!--                    </a>-->
+<!--                </li>-->
+
+<!--                &lt;!&ndash; more list items here &ndash;&gt;-->
+
+<!--                <li>-->
+<!--                    <div class="switch">-->
+<!--                        <input type="checkbox" id="mode" checked>-->
+<!--                        <label for="mode">-->
+<!--                            <span></span>-->
+<!--                            <span>Dark</span>-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">-->
+<!--                        <svg aria-hidden="true">-->
+<!--                            <use xlink:href="#collapse"></use>-->
+<!--                        </svg>-->
+<!--                        <span>Collapse</span>-->
+<!--                    </button>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+<!--    </header>-->
+
+<!--    <section class="search-and-user">-->
+<!--        <form>-->
+<!--            <input type="search" placeholder="Search Pages...">-->
+<!--            <button type="submit" aria-label="submit form">-->
+<!--                <svg aria-hidden="true">-->
+<!--                    <use xlink:href="#search"></use>-->
+<!--                </svg>-->
+<!--            </button>-->
+<!--        </form>-->
+<!--        <div class="admin-profile">-->
+<!--            <span class="greeting">...</span>-->
+<!--            <div class="notifications">-->
+<!--                <span class="badge">...</span>-->
+<!--                <svg>-->
+<!--                    <use xlink:href="#users"></use>-->
+<!--                </svg>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+<!--    <section class="grid">-->
+<!--        <article></article>-->
+<!--        <article></article>-->
+<!--        <article></article>-->
+<!--        <article></article>-->
+<!--        <article></article>-->
+<!--        <article></article>-->
+<!--        <article></article>-->
+<!--        <article></article>-->
+<!--    </section>-->
+</body>
+</html>

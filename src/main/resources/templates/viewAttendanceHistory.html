@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a th:href="@{/adminDashboard}" class="btn btn-primary btn-sm mb-3"> Back to Home</a>
+    <h3>Employee Leave Request Form</h3>
+    <hr>
+    <form action="#" th:action="@{/viewAttendanceHistory}" method="POST">
+        <input type="date" th:field="*{leaveStartDate}" placeholder="Start Date" class="form-control mb-4 col-4" required>
+
+        <input type="date" th:field="*{leaveEndDate}" placeholder="End Date" class="form-control mb-4 col-4" required>
+
+        <button type="submit" class="btn btn-info col-2"> Request</button>
+    </form>
+</div>
+</body>
+</html>

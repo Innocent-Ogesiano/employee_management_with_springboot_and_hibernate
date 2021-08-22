@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<a th:href="@{/employeeDashboard}" class="btn btn-primary btn-sm mb-3"> Back to Home</a>
+    <table border="1" class = "table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Salary Month</th>
+            <th>Date Paid</th>
+            <th>Amount Paid</th>
+<!--            <th>Request Status</th>-->
+            <!--        <th>Employee Password</th>-->
+            <!--        <th colspan="2" style="text-align: center; font-size: xxx-large">Action</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="salary : ${salaries}">
+            <td th:text="${salary.employee.username}"></td>
+            <td th:text="${salary.monthInView}"></td>
+            <td th:text="${salary.datePaid}"></td>
+            <td th:text="${salary.amountPaid}"></td>
+<!--            <td th:text="${leaveRequest.requestStatus}"></td>-->
+            <!--        <td><a th:href="@{/deleteEmployee/{id}(id=${employee.employeeId})}" class="btn btn-danger">Delete</a></td>-->
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

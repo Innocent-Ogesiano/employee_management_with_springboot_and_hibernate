@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+    <div>
+        <a th:href="@{/employeeDashboard}" class="btn btn-primary btn-sm mb-3"> Back to Home</a>
+      <h3>Employee Leave Request Form</h3>
+        <hr>
+      <form action="#" th:action="@{/leaveRequest}" th:object="${leave}" method="POST">
+          <input type="date" th:field="*{leaveStartDate}" placeholder="Start Date" class="form-control mb-4 col-4" required>
+
+          <input type="date" th:field="*{leaveEndDate}" placeholder="End Date" class="form-control mb-4 col-4" required>
+
+          <select name="leave_type" id="leave_type" th:field="*{leaveType}" class="form-control mb-4 col-4" required>
+              <option value="" disabled selected>Please select leave type</option>
+              <option value="Sick Leave">Sick Leave</option>
+              <option value="Maternity Leave">Maternity Leave</option>
+              <option value="Annual Leave">Annual Leave</option>
+              <option value="Casual Leave">Casual Leave</option>
+          </select>
+
+          <input type="hidden" th:field="*{employee.employeeId}" class="form-control mb-4 col-4">
+
+          <input type="hidden" th:field="*{requestStatus}" class="form-control mb-4 col-4">
+
+          <button type="submit" class="btn btn-info col-2"> Request</button>
+      </form>
+    </div>
+</body>
+</html>
